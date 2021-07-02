@@ -2038,14 +2038,14 @@ input, select, textarea {
 	#nav {
 		background-color: #282828;
 		text-align: center;
-		position: fixed;
+		position: relative;
 		left: 0;
 		top: 0;
 		width: 100%;
 		z-index: 10000;
 		cursor: default;
-		height: 3.5em;
-		line-height: 3.5em;
+		height: 3.0em;
+		line-height: 3.0em;
 	}
 
 		#nav ul {
