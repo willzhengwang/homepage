@@ -4,8 +4,6 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	
-	
 	<body class="is-preload">
 		<head>
 			<meta charset="utf-8" />
@@ -14,61 +12,52 @@
 		</head>
 
 		<!-- GRInS -->
-			<div class="research-modal modal fade" id="GRInS" tabindex="-1">
-				<div class="modal-content">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-8 col-lg-offset-2">
-								<div class="modal-body">
-									<h2>Ground-based InSAR Software System (GRInS)</h2>
-									<hr class="star-primary">
-									<h4 align="left">Contents:</h4> 
-									<ul>
-										<li style="margin:10px" align="left">Introduction</li>
-										<li style="margin:10px" align="left">The GRInS</li>
-										<li style="margin:10px" align="left">Case studies</li>
-										<li style="margin:10px" align="left">Programming (Architecture, C++, QT, Cuda)</li>
-									</ul><hr>
+			<article id="GRInS" class="wrapper style1">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 col-8-large col-12-medium">
+							<h2> Ground-based InSAR Software System (GRInS) </h2><hr>
+							<h4 align="left">Contents:</h4> 
+							<ul>
+								<li style="margin:10px" align="left">Background</li>
+								<li style="margin:10px" align="left">Introduction to the GRInS</li>
+								<li style="margin:10px" align="left">Case studies</li>
+								<li style="margin:10px" align="left">Programming: C++, QT, Cuda, openMP. (Development from scratch.)</li>
+							</ul><hr>
 
-									<h3>Introduction</h3> 
-									<p class="large" align="left">Ground-Based Synthetic Aperture Radar (GBSAR) is a remote sensing technology that is able to monitor natural and artificial surfaces with areal extents of up to a few square kilometres and offers the measurement of surface displacements in the radar Line Of Sight (LOS) with sub-mm precision (Caduff et al, 2015). GBSAR also has inherent advantages in terms of portability, view-angle to steep slopes, and flexibility for data collection over spaceborne SAR. Consecutive GBSAR acquisitions with a high temporal resolution (several seconds) enable time series analysis of fast-changing scenarios and monitoring of hazardous areas in real time that can act as the basis for early warning systems. The aforementioned characteristics of GBSAR make it unique and complementary to other deformation monitoring techniques (e.g. levelling, global navigation satellite systems, photogrammetric computer vision and terrestrial laser scanning), thereby offering significant potential in the prediction and mitigation of hazards. An overview of two representative ground-based radar systems is given in Figure 1. <br>
-										<figure>
-											<img src="images/gbsar.png"  class="img-responsive img-centered">
-											<figcaption>Figure 1. (a) A FastGBSAR instrument manufactured by the Metasensing Company, The Netherlands. FastGBSAR creates a synthetic antenna and acquires SAR images by moving the radar unit along a linear rail. (b) A GPRI-II instrument by the GAMMA Remote Sensing, Switzerland. GPRI-II is a real-aperture radar which uses physically long antennas to produce 2D radar images in the same format as GBSAR.</figcaption>
-										</figure>
-									</p><hr>
+							<h3>Background</h3> 
+							<p class="large" align="left">Ground-Based Synthetic Aperture Radar (GBSAR) is a remote sensing technology that is able to monitor natural and artificial surfaces with areal extents of up to a few square kilometres and offers the measurement of surface displacements in the radar Line Of Sight (LOS) with sub-mm precision (Caduff et al, 2015). GBSAR also has inherent advantages in terms of portability, view-angle to steep slopes, and flexibility for data collection over spaceborne SAR. Consecutive GBSAR acquisitions with a high temporal resolution (several seconds) enable time series analysis of fast-changing scenarios and monitoring of hazardous areas in real time that can act as the basis for early warning systems. The aforementioned characteristics of GBSAR make it unique and complementary to other deformation monitoring techniques (e.g. levelling, global navigation satellite systems, photogrammetric computer vision and terrestrial laser scanning), thereby offering significant potential in the prediction and mitigation of hazards. An overview of two representative ground-based radar systems is given in Figure 1. <br>
+							</p>
+							<figure>
+								<img src="images/gbsar.png" alt="grins_data.png" style="width: 60%">
+								<figcaption style="text-align: left;">Figure 1. (a) A FastGBSAR instrument manufactured by the Metasensing Company, The Netherlands. FastGBSAR creates a synthetic antenna and acquires SAR images by moving the radar unit along a linear rail. (b) A GPRI-II instrument by the GAMMA Remote Sensing, Switzerland. GPRI-II is a real-aperture radar which uses physically long antennas to produce 2D radar images in the same format as GBSAR.</figcaption>
+							</figure><hr>
 
-									<h3>Introduction</h3> 
-									<p> To be continued!</p>
-									<figure>
-										<img src="images/grins_data.png"  class="img-responsive img-centered">
-										<figcaption>Figure 2. GRInS - Data page </figcaption> 
-									</figure><br><br>
-									<figure>
-										<img src="images/grins_results.png"  class="img-responsive img-centered">
-										<figcaption>Figure 3. GRInS - Results page </figcaption>
-									</figure><br><br>
+							<h3>Introduction to the GRInS</h3> 
+							<p> To be continued!</p>
+							<figure>
+								<img src="images/grins_data.png" alt="grins_data.png" style="width: 60%">
+								<figcaption>Figure 2. GRInS - Data page </figcaption> 
+							</figure><br><br>
+							<figure>
+								<img src="images/grins_results.png" alt="grins_results.png" style="width: 60%">
+								<figcaption>Figure 3. GRInS - Results page </figcaption>
+							</figure><br><br>
 
+							<h3>Case studies</h3> 
+							<figure>
+								<img src="images/case_baige.png" alt="case_baiges.png" style="width: 60%">
+								<figcaption>Figure 4. 2018 December Baige landslide </figcaption>
+							</figure>
 
-									<h3>Case studies</h3> 
-									<figure>
-										<img src="images/case_baige.png"  class="img-responsive img-centered">
-										<figcaption>Figure 4. 2018 December Baige landslide </figcaption> <hr>
-									</figure>
-
-									<figure>
-										<img src="images/case_rabt.png"  class="img-responsive img-centered">
-										<img src="images/case_rabt_results.png"  class="img-responsive img-centered">
-										<figcaption>Figure 5. 2018 December RaBT (Rest and Be Thankful, A83 Road, Scotland) landslide </figcaption>
-									</figure>
-
-
-									<br><br>
-								</div>
-							</div>
+							<figure>
+								<img src="images/case_rabt.png" alt="case_rabts.png" style="width: 60%">
+								<img src="images/case_rabt_results.png" alt="case_rabt_results.png" style="width: 60%">
+								<figcaption>Figure 5. 2018 December RaBT (Rest and Be Thankful, A83 Road, Scotland) landslide </figcaption>
+							</figure>
 						</div>
 					</div>
 				</div>
-			</div>
+			</article>
 	</body>
 </html>
