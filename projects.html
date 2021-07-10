@@ -26,7 +26,7 @@
 							</ul><hr>
 
 							<h3>Background</h3> 
-							<p class="large" align="left">Ground-Based Synthetic Aperture Radar (GBSAR) is a remote sensing technology that is able to monitor natural and artificial surfaces with areal extents of up to a few square kilometres and offers the measurement of surface displacements in the radar Line Of Sight (LOS) with sub-mm precision (Caduff et al, 2015). GBSAR also has inherent advantages in terms of portability, view-angle to steep slopes, and flexibility for data collection over spaceborne SAR. Consecutive GBSAR acquisitions with a high temporal resolution (several seconds) enable time series analysis of fast-changing scenarios and monitoring of hazardous areas in real time that can act as the basis for early warning systems. The aforementioned characteristics of GBSAR make it unique and complementary to other deformation monitoring techniques (e.g. levelling, global navigation satellite systems, photogrammetric computer vision and terrestrial laser scanning), thereby offering significant potential in the prediction and mitigation of hazards. An overview of two representative ground-based radar systems is given in Figure 1. <br>
+							<p class="large" align="left">Ground-Based Synthetic Aperture Radar (GBSAR) is a remote sensing technology that is able to monitor natural and artificial surfaces with areal extents of up to a few square kilometres and offers the measurement of surface displacements in the radar Line Of Sight (LOS) with sub-mm precision. GBSAR also has inherent advantages in terms of portability, view-angle to steep slopes, and flexibility for data collection over spaceborne SAR. Consecutive GBSAR acquisitions with a high temporal resolution (several seconds) enable time series analysis of fast-changing scenarios and monitoring of hazardous areas in real time that can act as the basis for early warning systems. The aforementioned characteristics of GBSAR make it unique and complementary to other deformation monitoring techniques (e.g. levelling, global navigation satellite systems, photogrammetric computer vision and terrestrial laser scanning), thereby offering significant potential in the prediction and mitigation of hazards. An overview of two representative ground-based radar systems is given in Figure 1. <br>
 							</p>
 							<figure>
 								<img src="images/gbsar.png" alt="grins_data.png" style="width: 60%">
@@ -34,27 +34,64 @@
 							</figure><hr>
 
 							<h3>Introduction to the GRInS</h3> 
-							<p> To be continued!</p>
+							<p class="large" align="left"> GBSAR data acquisition can be performed either in a continuous or discontinuous (campaign) mode, depending on the rate of surface motion, and/or the environment for instrument deployment. The continuous mode employs a zero-baseline geometry for all acquisitions, thus avoiding influences of hardware related technical issues and leading to better performance in terms of the density, precision, and reliability of deformation measurements. The discontinuous mode with repeated campaigns is especially useful for monitoring an event whereby the deformation becomes significant over a relatively long period and the deployment of continuous GBSAR cannot be easily achieved. GRInS aims to offer complete and reliable solutions for the deformation monitoring purpose in both scenarios. </p>
+							
+							<h4 align="left">The main features of GRInS:</h4> 
+							<ul>
+								<li style="margin:10px" align="left">Integration of advanced InSAR algorithms for coherence estimation, phase filtering, coherent pixel selection, static and dynamic atmospheric correction, 2D/3D phase unwrapping, and geometric repositioning/orbital error correction, etc.</li>
+								<li style="margin:10px" align="left">Geocoding (Google Earth KML), Coregistration point cloud, DEM generation for multi-track GBSAR systems.</li>
+								<li style="margin:10px" align="left">C++ implementation and CUDA acceleration of core InSAR algorithms.</li>
+								<li style="margin:10px" align="left">Near-real-time processing and post-processing through automatic pipelines or step-by-step analysis, which is similar to most photogrammetric structure-from-motion softwares. </li>
+								<li style="margin:10px" align="left">Group email alerts when displacements are accelerated at a rate higher than a user-defined threshold. </li>
+								<li style="margin:10px" align="left">Two popular GBSAR systems(i.e., FastGBSAR and GPRI-II) are supported. </li>
+								<li style="margin:10px" align="left">Chinese and English user interface and data outputs. </li>
+							</ul>
 							<figure>
 								<img src="images/grins_data.png" alt="grins_data.png" style="width: 80%">
 								<figcaption>Figure 2. GRInS - Data page </figcaption> 
-							</figure><br><br>
+							</figure><br>
 							<figure>
 								<img src="images/grins_results.png" alt="grins_results.png" style="width: 80%">
 								<figcaption>Figure 3. GRInS - Results page </figcaption>
-							</figure><br><br>
+							</figure><hr>
+
+							<figure>
+								<img src="images/grins_dem.png" alt="grins_results.png" style="width: 80%">
+								<figcaption>Figure 4. GRInS - Geocoding and DEM generation </figcaption>
+							</figure><hr>
 
 							<h3>Case studies</h3> 
+							<p class="large" align="left"> Two real world case studies of using GBSAR for landslide monitoring are presented in this article. The first case study is the December 2018 Baige landslide, which is a fast-changing case with deformation reaching up to several metres per day, thus requiring the high temporal resolution possible with GBSAR. The study site was located on a mountain slope near the Jinsha River, Tibet. Strong topographic variations and water vapour turbulence can be observed in this case-study example. GBSAR scenes (n = 61) were acquired using a GAMMA GPRI-II system over a period of 8.1 hours on December 4th, 2018. The slant observing range varied from 6.5 km to 9.0 km. The dataset in this study was by a small-baseline time series procedure and the GRInS. Considering the rapid rate of change, interferograms were constructed with a temporal baseline restriction of one image, hence each image was allowed to generate an interferogram with only the preceding and subsequent image. Pixels with coherence > 0.4 were selected for time series analysis. The results, including a LOS deformation velocity map and the time-series displacements of 8 selected points, are shown in Figure 5.</p>
+							<p class="large" align="left">In Figure 5, points 1-5 were selected from the deforming area and points 6-8 randomly from stable areas. Points 1-4 moved rapidly away from the radar system during the observation period, indicating that an active sliding process was occurring. The area surrounding point 5 shows a gradually growing trend in the negative direction, suggesting this area was moving slightly towards the radar. Besides, points 6-8 remained stable with a small standard deviation of 0.45 mm (referring to zero), implying the high-precision ability of GBSAR interferometry in landslide monitoring.</p>
 							<figure>
 								<img src="images/case_baige.png" alt="case_baiges.png" style="width: 80%">
-								<figcaption>Figure 4. 2018 December Baige landslide </figcaption> <br><br>
+								<figcaption style="text-align: left;">Figure 5. The 4 December 2018 Baige landslide monitoring results. (a) Overview of the landslide, indicated in the red eclipse. (b) Deformation rate map. 8 points were marked. (c) Displacement time series of the points. (d) Deformation rate in the SAR image space. </figcaption> <br><br>
 							</figure>
 
+							<p class="large" align="left">The second case study is the A83 trunk road at the locality known as the ‘Rest and Be Thankful’ (RaBT), Scotland. Rainfall triggered debris flows and shallow landslides often preceded by creep periods are a common occurrence on this slope, resulting landslides having often affected this key trunk road network. An overview of the observed slope is shown in Figure 6, with three areas of events in October and November 2018 marked. These areas experienced several landslips prior to GBSAR observation. The area marked in the yellow rectangle indicates where fresh debris flow material was being removed from catch-nets / flexible barriers during the observation period. The blue rectangle is used as an example of the surface condition for the majority of the vegetated slope pre-failure. The surface is covered by low natural vegetation, primarily grasses and bracken, scattered rocks, in-situ bedrock, and installed artificial catch-nets for protecting the A83 from debris flows.</p>
 							<figure>
-								<img src="images/case_rabt.png" alt="case_rabts.png" style="width: 80%">
-								<img src="images/case_rabt_results.png" alt="case_rabt_results.png" style="width: 60%">
-								<figcaption>Figure 5. 2018 December RaBT (Rest and Be Thankful, A83 Road, Scotland) landslide </figcaption>
+								<img src="images/case_rabt_site.png" alt="case_rabts.png" style="width: 60%">
+								<figcaption style="text-align: left;">Figure 6. (a) The observed slope. (b) Close-up of the area indicated in the yellow box, where roadworks were undergoing. (c) Close-up of the area indicated in the blue box, giving an example of the primary observing surface condition and mitigation works. </figcaption>
 							</figure>
+
+							<p class="large" align="left">GBSAR data was collected using a FastGBSAR system, which was mounted on a stationary concrete base, scanning the slope at a temporal resolution of 10 seconds. Weather conditions varied dramatically on each of the three days of data collection during the period from 10th to 12th December 2018. In this study, 10 minutes of continuous GBSAR data (i.e. 60 images) were acquired on the clear day, three hours of data (i.e. 1,080 images) on the foggy day, and two hours (i.e. 720 images) on the rainy day. For all data, the image resolution was set as 0.5 m in range and 5 mrad in azimuth. </p>
+
+							<figure>
+								<img src="images/case_rabt.png" alt="case_rabt.png" style="width: 80%">
+								<figcaption style="text-align: center;">Figure 7. FastGBSAR observation at RaBT.  </figcaption>
+							</figure><br>
+
+							<p class="large" align="left">For the clear day, the results are displayed in the first row of Figure 8. To better interpret the GBSAR deformation monitoring results, the cumulative displacement map was projected onto an existing point cloud of the observed slope. Six points were selected from the three areas, as highlighted in Figure 7 (a), to examine their displacement evolution. No significant deformation signals could be detected from the results during this short period of observation on the clear day. </p>
+							<p class="large" align="left">For the foggy day, results are shown in the second row of Figure 8. Obvious deformation took place in only one local area which spanned approximately 20 m in the Y-axis direction and 40 m in the X-axis direction. The area was above the A83 road and near the location of catch-net clearance and remedial works being conducted on that day. Two additional points, 7 and 8, were selected from the deforming area to investigate displacement time series. The displacement reached approximately -15 mm for over the observation period under the foggy condition. Points 1-6 selected from the highlighted areas were observed as stable. Negative displacements indicate that the slope surface of the deforming area was moving towards the radar instrument in the LOS direction, and positive displacements imply that the slope surface of the deforming area was moving away from the radar along the LOS direction. </p>
+							<p class="large" align="left">Deformation was also only detected in the same area from observations taken on the rainy day. A cumulative displacement map containing obvious deformation signals and the corresponding deformation time series are shown in the third row of Figure 8. The deformation reached +20 mm over a duration of 2 hours. Over this duration, points 1-6 remained stable.  </p>
+							<figure>
+								<img src="images/case_rabt_results.png" alt="case_rabt_results.png" style="width: 80%">
+								<figcaption style="text-align: left;">Figure 8. The December 2018 RaBT landslide monitoring results. First row for the clear day, second the foggy day and third the rainy day. </figcaption>
+							</figure>
+							<p class="large" align="left">Based on the deformation monitoring results, no obvious deformation was detected from the highlighted areas of the slope over the continuous observation periods on any of these three days. Deformation was only detected in the area slightly above the roadworks where it was known a priori that change was occurring. In this location the catch-nets were being emptied and a small levee was being constructed by road workers. </p>
+							<p class="large" align="left">The results also suggest that the detected slope deformation was related to the landslide mitigation/clearance roadworks. Moreover, the direction of the deformation signals on the foggy day (11/12/2018) were opposite to that on the rainy day (12/12/2018). The results on the foggy day exhibited negative LOS displacements, indicating the slope surface was sliding downwards. Whilst it was rainy on the following day, the rain could trigger the sliding process and cause surface earth loss in the deforming area as this area was affected by roadworks and was unstable. The surface earth loss could result in the positive LOS displacements.</p>
+							<p class="large" align="left">A quantitative and complete validation of GBSAR deformation measurements in a real-world application can be challenging. The applications have demonstrated GBSAR interferometry has the ability to monitor landslides in all-weather conditions. </p>
+							
 						</div>
 					</div>
 				</div>
