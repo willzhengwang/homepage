@@ -25,7 +25,7 @@
 								<li style="margin:10px" align="left">Case studies</li>
 							</ul><hr>
 
-							<h3>Background</h3> 
+							<h3 align="left">Background</h3> 
 							<p class="large" align="left">Ground-Based Synthetic Aperture Radar (GBSAR) is a remote sensing technology that is able to monitor natural and artificial surfaces with areal extents of up to a few square kilometres and offers the measurement of surface displacements in the radar Line Of Sight (LOS) with sub-mm precision. GBSAR also has inherent advantages in terms of portability, view-angle to steep slopes, and flexibility for data collection over spaceborne SAR. Consecutive GBSAR acquisitions with a high temporal resolution (several seconds) enable time series analysis of fast-changing scenarios and monitoring of hazardous areas in real time that can act as the basis for early warning systems. The aforementioned characteristics of GBSAR make it unique and complementary to other deformation monitoring techniques (e.g. levelling, global navigation satellite systems, photogrammetric computer vision and terrestrial laser scanning), thereby offering significant potential in the prediction and mitigation of hazards. An overview of two representative ground-based radar systems is given in Figure 1. <br>
 							</p>
 							<figure>
@@ -33,7 +33,7 @@
 								<figcaption style="text-align: left;">Figure 1. (a) A FastGBSAR instrument manufactured by the Metasensing Company, The Netherlands. FastGBSAR creates a synthetic antenna and acquires SAR images by moving the radar unit along a linear rail. (b) A GPRI-II instrument by the GAMMA Remote Sensing, Switzerland. GPRI-II is a real-aperture radar which uses physically long antennas to produce 2D radar images in the same format as GBSAR.</figcaption>
 							</figure><hr>
 
-							<h3>Introduction to the GRInS</h3> 
+							<h3 align="left">Introduction to the GRInS</h3> 
 							<p class="large" align="left"> GBSAR data acquisition can be performed either in a continuous or discontinuous (campaign) mode, depending on the rate of surface motion, and/or the environment for instrument deployment. The continuous mode employs a zero-baseline geometry for all acquisitions, thus avoiding influences of hardware related technical issues and leading to better performance in terms of the density, precision, and reliability of deformation measurements. The discontinuous mode with repeated campaigns is especially useful for monitoring an event whereby the deformation becomes significant over a relatively long period and the deployment of continuous GBSAR cannot be easily achieved. GRInS aims to offer complete and reliable solutions for the deformation monitoring purpose in both scenarios. </p>
 							
 							<h4 align="left">The main features of GRInS:</h4> 
@@ -59,7 +59,7 @@
 								<figcaption>Figure 4. GRInS - Geocoding and DEM generation </figcaption>
 							</figure><hr>
 
-							<h3>Case studies</h3> 
+							<h3 align="left">Case studies</h3> 
 							<p class="large" align="left"> Two real world case studies of using GBSAR for landslide monitoring are presented in this article. The first case study is the December 2018 Baige landslide, which is a fast-changing case with deformation reaching up to several metres per day, thus requiring the high temporal resolution possible with GBSAR. The study site was located on a mountain slope near the Jinsha River, Tibet. Strong topographic variations and water vapour turbulence can be observed in this case-study example. GBSAR scenes (n = 61) were acquired using a GAMMA GPRI-II system over a period of 8.1 hours on December 4th, 2018. The slant observing range varied from 6.5 km to 9.0 km. The dataset in this study was by a small-baseline time series procedure and the GRInS. Considering the rapid rate of change, interferograms were constructed with a temporal baseline restriction of one image, hence each image was allowed to generate an interferogram with only the preceding and subsequent image. Pixels with coherence > 0.4 were selected for time series analysis. The results, including a LOS deformation velocity map and the time-series displacements of 8 selected points, are shown in Figure 5.</p>
 							<p class="large" align="left">In Figure 5, points 1-5 were selected from the deforming area and points 6-8 randomly from stable areas. Points 1-4 moved rapidly away from the radar system during the observation period, indicating that an active sliding process was occurring. The area surrounding point 5 shows a gradually growing trend in the negative direction, suggesting this area was moving slightly towards the radar. Besides, points 6-8 remained stable with a small standard deviation of 0.45 mm (referring to zero), implying the high-precision ability of GBSAR interferometry in landslide monitoring.</p>
 							<figure>
@@ -88,10 +88,66 @@
 							</figure>
 							<p class="large" align="left">Based on the deformation monitoring results, no obvious deformation was detected from the highlighted areas of the slope over the continuous observation periods on any of these three days. Deformation was only detected in the area slightly above the roadworks where it was known a priori that change was occurring. In this location the catch-nets were being emptied and a small levee was being constructed by road workers. </p>
 							<p class="large" align="left">The results also suggest that the detected slope deformation was related to the landslide mitigation/clearance roadworks. Moreover, the direction of the deformation signals on the foggy day (11/12/2018) were opposite to that on the rainy day (12/12/2018). The results on the foggy day exhibited negative LOS displacements, indicating the slope surface was sliding downwards. Whilst it was rainy on the following day, the rain could trigger the sliding process and cause surface earth loss in the deforming area as this area was affected by roadworks and was unstable. The surface earth loss could result in the positive LOS displacements.</p>
-							<p class="large" align="left">A quantitative and complete validation of GBSAR deformation measurements in a real-world application can be challenging. The applications have demonstrated GBSAR interferometry has the ability to monitor landslides in all-weather conditions. </p>							
+							<p class="large" align="left">A quantitative and complete validation of GBSAR deformation measurements in a real-world application can be challenging. The applications have demonstrated GBSAR interferometry has the ability to monitor landslides in all-weather conditions. </p>
+						<br><br><br><br><br><br><br><br><br><br>
 						</div>
 					</div>
 				</div>
 			</article>
+	
+	<!-- Zoom-lens Calibration -->
+		<article id="calibration" class="wrapper style1">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-8-large col-12-medium">
+						<h2> Zoom-Lens Calibration </h2>
+						<p class="large" align="left">A reasearch project of zoom-lens camera calibration in close-range photogrammetry. Application of calibrated zoom-lens cameras to reander LiDAR (Light Detection and Ranging) point clouds with the highest-quality photos taken at the best camera settings.</p><hr>
+						<h4 align="left">Contents:</h4> 
+						<ul>
+							<li style="margin:10px" align="left">Background</li>
+							<li style="margin:10px" align="left">Zoom lens calibration with zoom- and focus-related intrinsic parameters applied to bundle adjustment</li>
+							<li style="margin:10px" align="left">A Flexible, Generic Photogrammetric Approach to Zoom Lens Calibration</li>
+							<li style="margin:10px" align="left">LiDAR point cloud rendering with calibrated zoom-lens cameras</li>
+						</ul><hr>
+
+						<h3 align="left">Background</h3> 
+						<p class="large" align="left">Zoom-lens cameras offer significant levels of versatility in comparison with their prime lens counterparts. Apart from changing focus and aperture settings, a zoom-lens camera is also capable of adjusting zoom settings to suit different FOV and depths of field (DOF). Thus, zoom lenses have generally been favored in consumer photography and extensively employed for various low accuracy applications in the field of computer vision, e.g., active stereo vision, augmented reality, and object detection and tracking.</p><hr>
+						
+						<h3 align="left">Zoom lens calibration with zoom- and focus-related intrinsic parameters applied to bundle adjustment</h3> 
+						<p class="large" align="left">Zheng, S., <b>Wang, Z.</b>, Huang, R., 2015. Zoom lens calibration with zoom-and focus-related intrinsic parameters applied to bundle adjustment.<i><b>ISPRS Journal of Photogrammetry and Remote Sensing</b></i>, 102, pp.62-72.</p>
+						<p class="large" align="left"><strong> Abstract</strong>: A zoom lens is more flexible for photogrammetric measurements under diverse environments than a fixed lens. However, challenges in calibration of zoom-lens cameras preclude the wide use of zoom lenses in the field of close-range photogrammetry. Thus, a novel zoom lens calibration method is proposed in this study. In this method, instead of conducting modeling after monofocal calibrations, we summarize the empirical zoom/focus models of intrinsic parameters first and then incorporate these parameters into traditional collinearity equations to construct the fundamental mathematical model, i.e., collinearity equations with zoom- and focus-related intrinsic parameters. Similar to monofocal calibration, images taken at several combinations of zoom and focus settings are processed in a single self-calibration bundle adjustment. In the self-calibration bundle adjustment, three types of unknowns, namely, exterior orientation parameters, unknown space point coordinates, and model coefficients of the intrinsic parameters, are solved simultaneously. Experiments on three different digital cameras with zoom lenses support the feasibility of the proposed method, and their relative accuracies range from 1:4000 to 1:15100. Furthermore, the nominal focal length written in the exchangeable image file header is found to lack reliability in experiments. Thereafter, the joint influence of zoom lens instability and zoom recording errors is further analyzed quantitatively. The analysis result is consistent with the experimental result and explains the reason why zoom lens calibration can never have the same accuracy as monofocal self-calibration.</p>
+						
+						<figure>
+							<img src="images/project_calib_flowchart.png" alt="project_calib_flowchart.png" style="width: 65%">
+							<figcaption style="text-align: center;">Figure 1. Flowchart of the implementation of the proposed method. </figcaption><br>
+						</figure>
+						<figure>
+							<img src="images/project_calib_rulers.png" alt="project_calib_rulers.png" style="width: 60%">
+							<figcaption style="text-align: center;">Figure 2. Manually recording the zoom and focus settings for overcoming built-in setting inaccuracies. </figcaption><hr>
+						</figure>
+		
+						<h3 align="left">A Flexible, Generic Photogrammetric Approach to Zoom Lens Calibration</h3> 
+						<p class="large" align="left"><b>Wang, Z.</b>, Mills, J., Xiao, W., Huang, R., Zheng, S., Li, Z., 2017. A Flexible, Generic Photogrammetric Approach to Zoom Lens Calibration.<i><b>Remote Sensing</b></i>, 9(3), 244.</p>
+						<p class="large" align="left"><strong> Abstract</strong>: Compared with prime lenses, zoom lenses have inherent advantages in terms of operational flexibility. Zoom lens camera systems have therefore been extensively adopted in computer vision where precise measurement is not the primary objective. However, the variation of intrinsic camera parameters with respect to zoom lens settings poses a series of calibration challenges that have inhibited widespread use in close-range photogrammetry. A flexible zoom lens calibration methodology is therefore proposed in this study, developed with the aim of simplifying the calibration process and promoting practical photogrammetric application. A zoom-dependent camera model that incorporates empirical zoom-related intrinsic parameters into the collinearity condition equations is developed. Coefficients of intrinsic parameters are solved in a single adjustment based on this zoom lens camera model. To validate the approach, experiments on both optical- and digital-zoom lens cameras were conducted using a planar board with evenly distributed circular targets. Zoom lens calibration was performed with images taken at four different zoom settings spread throughout the zoom range of a lens. Photogrammetric accuracies achieved through both mono-focal and multi-focal triangulations were evaluated after calibration. The relative accuracies for mono-focal triangulations ranged from 1: 6300 to 1: 18,400 for the two cameras studied, whereas the multi-focal triangulation accuracies ranged from 1: 11,300 to 1: 16,200. In order to demonstrate the applicability of the approach, calibrated zoom lens imagery was used to render a laser-scanned point cloud of a building façade. Considered alongside experimental results, the successful application demonstrates the feasibility of the proposed calibration method, thereby facilitating the adoption of zoom lens cameras in close range photogrammetry for a wide range of scientific and practical applications.</p>
+						<figure>
+							<img src="images/project_calib_iphone6.png" alt="project_calib_iphone6.png" style="width: 60%">
+							<figcaption style="text-align: center;">Figure 3. (a) Nikon 1 J4 camera with a 3x optical zoom lens; (b) iPhone 6 mobile phone camera. </figcaption><hr>
+						</figure>
+
+						<h3 align="left">LiDAR point cloud rendering with calibrated zoom-lens cameras</h3> 
+						<p class="large" align="left">Terrestrial Laser Scanning (TLS) and photogrammetry are generally regarded as complementary techniques, and it is recognized that their integration can lead to more accurate and complete products. In this study, a Leica Geosystems P20 terrestrial laser scanner was used to acquire a point cloud of the façade of the King Edward VII Building on Newcastle University’s main campus. The point cloud density was set as 0.8 mm at 10 m range, with the highest quality mode selected. As the building façade is a relatively simple structure of regular size, only one scan was sufficient to acquire full coverage.</p>
+						<p class="large" align="left">The Nikon 1 J4 camera were used to acquire imagery of the façade at different focal lengths. One image was captured using a focal length appropriate to capture the entire building façade, and a second image was acquired at a longer focal length, focused on an intricate central feature, a coat of arms. All images were acquired from approximately the same location, directly adjacent to the TLS location. The intrinsic parameters for each image were computed with the EXIF focal length of each image and pre-calibrated model coefficients via the zoom-lens calibration process. </p>
+						<p class="large" align="left">In order to obtain the exterior orentation (EO) parameters of each image, sufficient conjugate reference points were manually selected on both the point cloud and corresponding image. Reference points for each co-registration are marked as circular dots and labeled with numbers in Figure 4. The EO parameters were computed by the following procedure: (i) a 3D direct linear transformation (DLT) was performed and the EO parameters were extracted from the 11 coefficients of DLT, which requires at least six reference points; (ii) iterative space resection was executed to refine the EO parameters.</p>
+						<p class="large" align="left">Once EO parameters of each image were determined, the co-registration of both the point cloud and image was implemented based on the collinearity equations with lens distortion correction terms. 3D space point coordinates were converted to an image plane and the color was assigned to each point in the cloud using nearest neighbor interpolation. In this application, the shorter focal length image was used to first texture the entire point cloud. The initial textured point cloud was then updated with the longer focal length image. Figure 4 compares the final textured point cloud products. </p>
+						
+						<figure>
+							<img src="images/project_calib_rendering.png" alt="project_calib_rendering.png" style="width: 80%">
+							<figcaption style="text-align: left;">Figure 4. (a), (b) Point clouds of the King Edward VII façade, textured with images taken by Nikon 1 J4 image with the focal length of 16.8 mm and 29.4 mm respectively. </figcaption>
+						</figure>
+						<br><br><br><br><br><br><br><br><br><br>
+					</div>
+				</div>
+			</div>
+		</article>
 	</body>
 </html>
