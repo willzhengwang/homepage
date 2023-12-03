@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<!--
+	Zheng Wang, PH.D
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<body class="is-preload">
+		<head>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+			<link rel="stylesheet" href="assets/css/main.css" />
+		</head>
+
+		<!-- srd_insar -->
+			<article id="srd_insar" class="wrapper style1">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 col-8-large col-12-medium">
+							<h2> An Random Masked Autoencoder for Self-supervised Residual Distribution Learning </h2>
+							<p align="center">Project 1: InSAR Phase Filtering and Coherence Estimation. <br> Project 2: SAR amplitude despeckling.</p><hr>
+							<h4 align="left">Contents:</h4> 
+							<ul>
+								<li style="margin:10px" align="left">Abstract: self-supervised residual distribution learning for InSAR phase filtering and coherence estimation</li>
+								<li style="margin:10px" align="left">Oral presentation slides of the abstract at the IEEE IGARSS 2023 Conference </li>
+								<li style="margin:10px" align="left">Sample results of applying the approach to SAR amplitude despeckling </li>
+							</ul><hr>
+
+							<h3 align="left">Self-supervised residual distribution learning for InSAR phase filtering and coherence estimation</h3>
+							<p class="large" align="left">Satellite-based Interferometric Synthetic Aperture Radar (InSAR) is a powerful remote sensing technique to measure precise ground surface deformation from space using a set of SAR images acquired over the same geographical area at different times.
+								The basic unit in InSAR analysis is an interferogram giving the phase difference between two co-registered SAR images.
+								Phase filtering and coherence estimation play critical roles in the processing of these interferograms to derive ground deformations.
+								Coherence is a measure of the data quality and can be estimated from the noise removed in the phase filtering.
+								Phase filtering and coherence estimation are usually conducted together, in one step, and have been the focus of considerable recent effort from the deep learning research community.
+								Numerous deep learning-based approaches have been developed and demonstrated to produce promising results when compared to conventional approaches.<br>
+							</p>
+							<p class="large" align="left">DeepInSAR [1] was an early endeavor to apply a deep learning framework to jointly perform phase filtering and coherence estimation on SAR interferometric images.
+								Further machine learning-based studies (e.g., [2], [3], and [4]}) continued to explore this direction and improved the results by incorporating state-of-the-art model architectures or integrating pre- and post-processing procedures.
+								These studies demonstrated the advantages of using a differentiable neural network or a sophisticated in-differentiable algorithm.
+								However, the aforementioned studies utilized supervised learning, such that they required training datasets with high accuracy ground truth labels.
+								The development of such large-scale training sets is a time-consuming and costly process and very few such datasets are currently publicly available.  <br>
+							</p>
+							<p class="large" align="left">GenInSAR [5] was a self-supervised learning approach previously proposed by our research group to phase filtering and coherence estimation, such that it did not need labeled training data.
+								GenInSAR took inspiration from the Noise2Void concept [6] which merely trains on the body of data to be denoised.
+								There are, however, several outstanding issues with GenInSAR. <br>
+							</p>
+
+							<p class="large" align="left">The model in GenInSAR was trained on patches with the center pixels masked, resulting in a limited model architecture that constrains the output dimension to one by one. Additionally, only a few output pixels can contribute to the loss function, which dramatically restricts the training efficiency.
+								GenInSAR implemented the Noise2Void concept with a compromise by masking the center pixels in order to prevent the model from learning similar outputs. Dropping the center pixel is especially detrimental in InSAR tasks, as a central pixel can carry the main information of the ground being illuminated and each pixel can represent hundreds of square meters of the ground depending on observing geometry and data resolution. Thus, central pixels should be included and considered in conjunction with its surrounding context.
+								The final notable drawback of GenInSAR is its unsatisfactory performance in coherence estimation. GenInSAR's coherence formula is based on a hand-crafted derivation that makes numerous assumptions and is not rigorously constrained inside the range [0, 1], which theoretically violates the coherence definition.		 <br>
+							</p>
+
+							<p class="large" align="left">In this study, a Self-supervised Residual Distribution InSAR (SRDInSAR) phase filtering and coherence estimation approach is proposed to address some of mentioned GenInSAR's issues.
+								A high-level architecture of the proposed framework is illustrated in Figure 1.
+								Our improvements to GenInSAR are summarized as follows:  <br>
+							</p>
+
+							<ul>
+								<li style="margin:10px" align="left">A random masking mechanism is utilized rather than masking the center pixel in GenInSAR. The random masking  allows a greater number of pixels to contribute to the loss function while also ensuring that the training is compatible with any modern fully convolutional image to image architecture (e.g., UNet [7], DenseNet [8], ResNet [9]).</li>
+								<li style="margin:10px" align="left">The model is trained together with the estimation of the residual distributions of both the real and imaginary channels, which draws inspiration from residual learning in natural image restoration and distribution learning in GenInSAR. This prevents the model from dropping the target pixel value throughout the training and inference stages.</li>
+								<li style="margin:10px" align="left">On top of GenInSAR's approach that estimates the distribution of each pixel location using a Mixture Density Network (MDN) [10], a further step is taken by directly approximating pixel coherence using Monte Carlo sampling from the estimated distribution [11]. In comparison to GenInSAR's handcrafted formula, our approach strictly follows the theoretical model of InSAR coherence and produces flawless [0, 1] value outputs.</li>
+							</ul>
+
+							<p class="large" align="left">The feasibility of the proposed approach has been demonstrated by experiments on simulated and real-world data.
+								The proposed SRDInSAR technique outperforms GenInSAR and DeepInSAR in terms of filtering quality and coherence estimation.  <br>
+							</p>
+
+							<figure>
+								<img src="images/model_architecture.png" alt="model_architecture.png" style="width: 60%">
+								<figcaption style="text-align: center;">Figure 1. Illustration of the proposed SRDInSAR framework.</figcaption>
+							</figure>
+
+							<h4 align="left">References</h4>
+							<ol>
+							  <li align="left">Xinyao Sun, Aaron Zimmer, Subhayan Mukherjee, Navaneeth Kamballur Kottayil, Parwant Ghuman, and Irene Cheng, “Deepinsara deep learning framework for sar interferometric phase restoration and coherence estimation,” Remote Sensing, vol. 12, no. 14, pp. 2340, 2020.</li>
+							  <li align="left">Yuxing Chen, Lorenzo Bruzzone, Liming Jiang, and Qishi Sun, “Aru-net: Reduction of atmospheric phase screen in sar interferometry using attention-based deep residual u-net,” IEEE Transactions on Geoscience and Remote Sensing, vol. 59, no. 7, pp. 5780–5793, 2020.</li>
+							  <li align="left">Liming Pu, Xiaoling Zhang, Zenan Zhou, Jun Shi, Shunjun Wei, and Yuanyuan Zhou, “A phase filtering method with scale recurrent networks for insar,” Remote Sensing, vol. 12, no. 20, pp. 3453, 2020.</li>
+							  <li align="left">Qi Zhang, Teng Wang, Yuanyuan Pei, and Xuguo Shi, “Selective kernel res-attention unet: Deep learning for generating decorrelation mask with applications to tandem-x interferograms,” IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, vol. 14, pp. 8537–8551, 2021.</li>
+							  <li align="left">Subhayan Mukherjee, Aaron Zimmer, Xinyao Sun, Parwant Ghuman, and Irene Cheng, “An unsupervised generative neural approach for insar phase filtering and coherence estimation,” IEEE Geoscience and Remote Sensing Letters, vol. 18, no. 11, pp. 1971–1975, 2020.</li>
+							  <li align="left">Alexander Krull, Tim-Oliver Buchholz, and Florian Jug, “Noise2void-learning denoising from single noisy images,” in Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, 2019, pp. 2129–2137.</li>
+							  <li align="left">Olaf Ronneberger, Philipp Fischer, and Thomas Brox, “U-net: Convolutional networks for biomedical image segmentation,” in International Conference on Medical image computing and computer-assisted intervention. Springer, 2015, pp. 234–241.</li>
+							  <li align="left">Forrest Iandola, Matt Moskewicz, Sergey Karayev, Ross Girshick, Trevor Darrell, and Kurt Keutzer, “Densenet: Implementing efficient convnet descriptor pyramids,” arXiv preprint arXiv:1404.1869, 2014.</li>
+							  <li align="left">Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun, “Deep residual learning for image recognition,” in Proceedings of the IEEE conference on computer vision and pattern recognition, 2016, pp. 770–778.</li>
+							  <li align="left">Christopher M Bishop, “Mixture density networks,” 1994.</li>
+							  <li align="left">Alexander Shapiro, “Monte carlo sampling methods,” Handbooks in operations research and management science, vol. 10, pp. 353–425, 2003.</li>
+							</ol><hr>
+
+							<h3 align="left">Oral presentation of the abstract at the IEEE IGARSS 2023 Conference</h3>
+							<p class="large" align="left"> An abstract of this work was accepted by the IEEE GARSS 2023 Conference as an oral presentation.
+								I attended the conference and presented the work at the conference.
+								The slides of the presentation are available <a href=https://github.com/willzhengwang/homepage/raw/main/files/igarss_2023_zwang.pdf>here.</a>
+							</p>
+
+							<figure>
+								<img src="images/igarss23_presentation.jpg" alt="igarss23_presentation.jpg" style="width: 60%">
+								<figcaption style="text-align: center;">Figure 2. Presentation of the work at a session of the IEEE GARSS 2023 Conference.</figcaption>
+							</figure>
+							<figure>
+								<img src="images/igarss23_photo.jpg" alt="igarss23_photo.jpg" style="width: 60%">
+								<figcaption style="text-align: center;">Figure 3. Achieved the runner-up in the table tennis tournament organized by the IGARSS 2023 conference.</figcaption>
+							</figure><hr>
+
+							<h3 align="left">Sample results of applying the approach to SAR amplitude despeckling</h3>
+							<p class="large" align="left"> The random masked autoencoder and self-supervised residual distribution learning approach has been applied to SAR image despeckling. Please see the figure below for an example the SAR amplitude despeckling model for a mining site.
+							</p>
+							<figure>
+								<img src="images/sar_despeckling_example.gif" alt="SAR amplitude despeckling demo" style="width: 80%">
+								<figcaption style="text-align: center;">Figure 4. Sample results of the SAR amplitude despeckling model for a mining site.</figcaption>
+							</figure>
+							<br><br><br><br>
+						</div>
+					</div>
+				</div>
+			</article>
+	</body>
+</html>
